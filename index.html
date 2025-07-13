@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malla Interactiva</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 900px;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+      font-size: 1.1rem;
+    }
+    td {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+    td:hover {
+      background-color: #d1d8e0;
+    }
+    /* Colores de ramos ejemplo */
+    .color-1 { background-color: #ff9999; }
+    .color-2 { background-color: #99ccff; }
+    .color-3 { background-color: #99ff99; }
+    .color-4 { background-color: #ffcc99; }
+    .color-5 { background-color: #cc99ff; }
+    .color-6 { background-color: #ffd699; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Ingeniería de Ejecución en Administración de Empresas</h1>
+
+  <table id="malla">
+    <thead>
+      <tr>
+        <th>Ramo / Semestre</th>
+        <th>1° Semestre</th>
+        <th>2° Semestre</th>
+        <th>3° Semestre</th>
+        <th>4° Semestre</th>
+        <th>5° Semestre</th>
+        <th>6° Semestre</th>
+        <th>7° Semestre</th>
+        <th>8° Semestre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Matemáticas I</td>
+        <td class="color-1" title="Matemáticas I"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Introducción a la Administración</td>
+        <td class="color-2" title="Introducción a la Administración"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Contabilidad Básica</td>
+        <td></td>
+        <td class="color-3" title="Contabilidad Básica"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Marketing</td>
+        <td></td>
+        <td></td>
+        <td class="color-4" title="Marketing"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Finanzas</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="color-5" title="Finanzas"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Gestión de Recursos Humanos</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="color-6" title="Gestión de Recursos Humanos"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <!-- Agrega más ramos aquí -->
+    </tbody>
+  </table>
+
+  <script>
+    // Opcional: Al hacer click en una celda cambiar el color
+    const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6'];
+    const table = document.getElementById('malla');
+
+    table.querySelectorAll('td').forEach(cell => {
+      cell.addEventListener('click', () => {
+        // Quitar clase de color anterior
+        colors.forEach(c => cell.classList.remove(c));
+        // Elegir aleatoriamente un color
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        cell.classList.add(randomColor);
+      });
+    });
+  </script>
+
+</body>
+</html>
